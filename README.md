@@ -1,7 +1,7 @@
 # Case Study for Akbank WEB3 Practium
 
 This project is a case study for Akbank WEB3 Practium. Here is the case;
-![Image](https://prnt.sc/0O91gCS3Nvcg)
+![Image](https://i.ibb.co/HdnW7xF/download.png)
 
 ## Introduction
 
@@ -20,10 +20,10 @@ Project was created with Create T3 App stack, written in TypeScript, and it cont
 
 ## How it Works and Using It
 
-While server is running, existing instances of cars, toll booths and report classes are created and stored in memory. When a user requests a page, tRPC queries returns the data from stored instances to the client.
-In landing page, user can see the list of cars and create new car instances.
-In toll booth page, user can see the list of toll booths and charge a car.
-In report page, user can see the daily revenue of all toll booths.
+- While server is running, existing instances of cars, toll booths and report classes are created and stored in memory. When a user requests a page, tRPC queries returns the data from stored instances to the client.
+- In landing page, user can see the list of cars and create new car instances.
+- In toll booth page, user can see the list of toll booths and charge a car.
+- In report page, user can see the daily revenue of all toll booths.
 
 ## Class Diagrams
 
