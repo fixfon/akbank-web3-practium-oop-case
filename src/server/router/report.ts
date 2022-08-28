@@ -3,8 +3,9 @@ import { z } from 'zod';
 
 export const reportRouter = createRouter().query('getDailyRevenue', {
 	resolve({ ctx }) {
+		const dailyRevenue = ctx.reportInstance.getDailyRevenue();
 		return {
-			greeting: `Hello ${ctx.reportInstance}`,
+			dailyRevenue,
 		};
 	},
 });

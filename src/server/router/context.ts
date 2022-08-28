@@ -6,25 +6,24 @@ import { Report } from '../../lib/report/Report';
 import { TollBooth } from '../../lib/tollBooth/TollBooth';
 import { prisma } from '../db/client';
 
-/**
- * Replace this with an object if you want to pass things to createContextInner
- */
 type CreateContextOptions = Record<string, never>;
 
-let carInstanceList: Car[];
+const carInstanceList: Car[] = [];
 let tollBoothInstanceList: TollBooth[];
 const reportInstance: Report = new Report();
-/** Use this helper for:
- * - testing, where we dont have to Mock Next.js' req/res
- * - trpc's `createSSGHelpers` where we don't have req/res
- **/
+
 export const createContextInner = async (opts: CreateContextOptions) => {
+	console.log('createContextInner run');
 	if (tollBoothInstanceList === undefined) {
 		const toll1 = new TollBooth('TollBooth1');
 		const toll2 = new TollBooth('TollBooth2');
 		const toll3 = new TollBooth('TollBooth3');
 		tollBoothInstanceList = [toll1, toll2, toll3];
+		reportInstance.addActiveBooth(toll1);
+		reportInstance.addActiveBooth(toll2);
+		reportInstance.addActiveBooth(toll3);
 	}
+
 	return {
 		prisma,
 		carInstanceList,
@@ -40,6 +39,7 @@ export const createContextInner = async (opts: CreateContextOptions) => {
 export const createContext = async (
 	opts: trpcNext.CreateNextContextOptions
 ) => {
+	console.log('createContext run');
 	return await createContextInner({});
 };
 
