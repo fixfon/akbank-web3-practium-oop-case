@@ -4,7 +4,6 @@ import { useRouter } from 'next/router';
 const Header = () => {
 	const router = useRouter();
 	const currentRoute = router.pathname;
-	console.log(currentRoute);
 	return (
 		<header className='flex items-center justify-around px-4 py-2 pt-24 text-gray-800'>
 			<div className='flex items-center'>
