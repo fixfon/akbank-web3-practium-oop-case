@@ -4,7 +4,6 @@ import * as trpcNext from '@trpc/server/adapters/next';
 import { Car } from '../../lib/car/Car';
 import { Report } from '../../lib/report/Report';
 import { TollBooth } from '../../lib/tollBooth/TollBooth';
-import { prisma } from '../db/client';
 
 type CreateContextOptions = Record<string, never>;
 
@@ -13,7 +12,7 @@ let tollBoothInstanceList: TollBooth[];
 const reportInstance: Report = new Report();
 
 export const createContextInner = async (opts: CreateContextOptions) => {
-	console.log('createContextInner run');
+	// console.log('createContextInner run');
 	if (tollBoothInstanceList === undefined) {
 		const toll1 = new TollBooth('TollBooth1');
 		const toll2 = new TollBooth('TollBooth2');
@@ -25,7 +24,6 @@ export const createContextInner = async (opts: CreateContextOptions) => {
 	}
 
 	return {
-		prisma,
 		carInstanceList,
 		tollBoothInstanceList,
 		reportInstance,
@@ -39,7 +37,7 @@ export const createContextInner = async (opts: CreateContextOptions) => {
 export const createContext = async (
 	opts: trpcNext.CreateNextContextOptions
 ) => {
-	console.log('createContext run');
+	// console.log('createContext run');
 	return await createContextInner({});
 };
 
