@@ -73,7 +73,6 @@ const Home: NextPage = (props) => {
 			) {
 				setFindCarParam(0);
 				setSelectedCarValue('none');
-				findCarRefetch();
 			}
 		}
 	};
@@ -204,6 +203,11 @@ const Home: NextPage = (props) => {
 									</div>
 								</div>
 							</div>
+						)}
+						{deleteCarResult && (
+							<p className='font-medium text-green-600 pt-4'>
+								{deleteCarResult.sucess}
+							</p>
 						)}
 					</div>
 				</section>

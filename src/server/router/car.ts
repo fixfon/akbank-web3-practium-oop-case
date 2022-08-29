@@ -46,7 +46,7 @@ export const carRouter = createRouter()
 				return carInfo;
 			});
 
-			console.log('Carinfolist', carInfoList);
+			// console.log('Carinfolist', carInfoList);
 			return {
 				carInfoList,
 			};
@@ -85,7 +85,7 @@ export const carRouter = createRouter()
 				throw new Error('Error when creating the car');
 			}
 			ctx.carInstanceList.push(car);
-			console.log('context car list', ctx.carInstanceList);
+			
 			return {
 				sucess: `A new car was created with HGS ID: ${nanoId}`,
 			};
