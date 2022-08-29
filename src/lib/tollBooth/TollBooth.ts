@@ -54,7 +54,8 @@ export class TollBooth implements ITollBooth {
 		);
 	}
 	getPassRecordsByDate(date: string): TollBoothPassInfo | TollBoothPassInfo[] {
-		return this.passRecords.filter((record) => record.date === date);
+		const dateObj = new Date(date);
+		return this.passRecords.filter((record) => record.date === dateObj.toLocaleDateString());
 	}
 	addPassRecord(passRecord: TollBoothPassInfo): void {
 		this.passRecords.push(passRecord);
