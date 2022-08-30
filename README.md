@@ -24,6 +24,7 @@ Project was created with Create T3 App stack, written in TypeScript, and it cont
 - In landing page, user can see the list of cars and create new car instances.
 - In toll booth page, user can see the list of toll booths and charge a car.
 - In report page, user can see the daily revenue of all toll booths.
+- Since, the project is running in serverless on Vercel, after a while memory may be cleared and all saved cars may be reset. But, if you run this project in local environment, you can store the instances of classes as long as server is running.
 
 ## Class Diagrams
 
