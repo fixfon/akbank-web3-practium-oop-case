@@ -27,7 +27,31 @@ Project was created with Create T3 App stack, written in TypeScript, and it cont
 
 ## Class Diagrams
 
-will be updated
+Stucture of the classes are as follows:
+
+### Car
+
+![Image](./classDiagrams/CarClassDiagram.png)
+
+### Auto
+
+![Image](./classDiagrams/AutoClassDiagram.png)
+
+### Minibus
+
+![Image](./classDiagrams/MinibusClassDiagram.png)
+
+### Bus
+
+![Image](./classDiagrams/BusClassDiagram.png)
+
+### Toll Booth
+
+![Image](./classDiagrams/TollBoothClassDiagram.png)
+
+### Report
+
+![Image](./classDiagrams/ReportClassDiagram.png)
 
 ## Project Structure
 
@@ -51,8 +75,12 @@ Project structure is as follows:
         - IReport.d.ts
       - Report.ts
   - pages
+    - api
+      - [trpc].ts
+    - \_app.tsx
     - index.tsx
-    -
+    - report.tsx
+    - tollbooth.tsx
   - server
     - router
       - index.ts
